@@ -1,0 +1,224 @@
+/* не было времени стили в порядок приводить, так что сорян за беспорядок */
+
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.title {
+  font-size: 40px;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 500px) {
+  .title {
+    font-size: 30px;
+  }
+}
+
+.todo-text {
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, .3);
+  max-width: 400px;
+  font-size: 20px;
+  grid-area: text;
+  align-self: center;
+}
+
+.todo-heading {
+  grid-area: heading;
+  font-size: 35px;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.todo-priority {
+  grid-area: priority;
+}
+
+.wish-img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  object-position: center center;
+  grid-area: img;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px #e4e4f1;
+  transition: opacity .2s linear;
+}
+
+@media screen and (max-width: 750px) {
+  .wish-img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .wish-img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.modal-img {
+  width: 100%;
+  max-height: 50vh;
+}
+
+.wish-img:hover {
+  cursor: pointer;
+  opacity: .3;
+}
+
+.change-icon {
+  grid-area: change;
+  width: 28px;
+  height: 28px;
+  align-self: end;
+}
+
+.change-icon:hover {
+  opacity: .3;
+}
+
+.todo {
+  display: grid;
+  grid-template-areas:
+    "priority img delete"
+    "heading img ."
+    "text img change";
+  grid-template-columns: 1fr auto 30px;
+  grid-template-rows: 40px auto 1fr;
+  gap: 20px;
+  box-shadow: 5px 5px 5px #e4e4f1;
+  padding: 20px 10px;
+  border-radius: 10px;
+  transition: transform .25s linear, background-color .25s linear, color .2s linear;
+}
+
+.todo:hover {
+  cursor: pointer;
+  transform: translateY(-5px);
+  background-color: #c5d1f9;
+  color: #fff;
+}
+
+@media screen and (max-width: 709px) {
+  .todo {
+    grid-template-areas: "heading delete"
+    "img ."
+    "text ."
+    "text change"
+    "priority priority";
+    grid-template-rows: auto;
+    grid-template-columns: auto 35px;
+  }
+  .wish-img {
+    justify-self: center;
+  }
+  .todo-heading {
+    text-align: center;
+    align-self: center;
+    font-size: 27px;
+  }
+  .todo-text {
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+
+.todo_done {
+  text-decoration: line-through;
+  opacity: .4;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 65%;
+}
+
+@media screen and (max-width: 1180px) {
+  .todo-list {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 874px) {
+  .buttons {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.delete-icon {
+  width: 32px;
+  height: 32px;
+  grid-area: delete;
+}
+
+.delete-icon:hover {
+  opacity: .3;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 25px;
+}
+
+@media screen and (max-width: 709px) {
+  .info {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+.info-text {
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+}
+
+.button {
+  align-self: center;
+  background-color: #c5d1f9;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+  border: none;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  padding: 15px 30px;
+  border-radius: 13px;
+  transition: background-color .15s linear, transform .2s linear;
+}
+
+.button:hover {
+  cursor: pointer;
+  transform: translateY(-5px);
+  background-color: rgba(0, 0, 0, .3);
+}
+
+.button:active {
+  background-color: rgba(0, 0, 0);
+}
